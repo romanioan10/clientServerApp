@@ -1,0 +1,10 @@
+rootProject.name = 'proiectClientServerMPP'
+include 'AplicatieModel'
+include 'AplicatiePersistence'
+include 'AplicatieServices'
+include 'AplicatieFX'
+include 'AplicatieNetworking'
+include 'AplicatieServer'
+include 'RestServices'
+include 'react-client'
+

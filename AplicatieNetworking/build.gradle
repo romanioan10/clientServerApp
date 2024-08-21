@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+
+}
+
+group = "ro.mpp2024"
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(platform("org.junit:junit-bom:5.9.1"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    implementation project (':AplicatieServices')
+    implementation project (':AplicatieModel')
+    implementation group: 'com.google.protobuf', name: 'protobuf-java', version: '3.22.4'
+}
+
+tasks.test {
+    useJUnitPlatform()
+}

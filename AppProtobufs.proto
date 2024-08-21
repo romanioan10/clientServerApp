@@ -1,0 +1,79 @@
+syntax="proto3";
+package protocol;
+
+option java_package = "protobuffprotocol";
+option java_outer_classname = "AppProtobufs";
+
+message User{
+     optional int32 id = 1;
+     string username=2;
+     string passwd=3;
+}
+
+message Rezervare{
+
+  optional int32 id = 1;
+     Client client=2;
+     Cursa cursa = 3;
+     int32 locuriDisponibile=4;
+}
+
+message Rezervari
+{
+  repeated Rezervare rezervari =1;
+}
+
+message Cursa{
+  optional int32 id = 1;
+     string destinatie=2;
+     string data=3;
+     string ora=4;
+     int32 locuriDisponibile=5;
+}
+
+message Curse
+{
+  repeated Cursa curse =1;
+}
+
+message Client{
+  optional int32 id = 1;
+
+  string nume=2;
+}
+message Request {
+  enum Type {UNKNOWN=0; LOGIN = 1; LOGOUT = 2; ADD_REZERVARE = 3; GET_ALL_CURSE=4; GET_ALL_REZERVARI=5;
+      CAUTARE_CURSE_DUPA_DESTINATIE=6; GET_CLIENT_BY_NAME=7; CAUTARE_CURSE=8;}
+
+  // Identifies which request is filled in.
+   Type type = 1;
+
+  // One of the following will be filled in, depending on the type.
+   oneof payload{
+       User user = 2;
+       Client client = 3;
+       Cursa cursa = 4;
+       Rezervare rezervare = 5;
+       string destinatie = 6;
+       string nume = 7;
+  }
+}
+
+message Response{
+   enum Type { UNKNOWN=0; OK = 1; ERROR = 2;REZERVARE_NOUA=3; CURSE_UPDATE=4; SEND_ALL_REZERVARI=5; SEND_ALL_CURSE=6; SEND_CLIENT=7;
+     SEND_SPECIFIC_CURSE=8;}
+
+     // Identifies which request is filled in.
+      Type type = 1;
+
+     // One of the following will be filled in, depending on the type.
+  oneof payload
+  {
+    string error = 2;
+    Rezervari rezervari = 3;
+    Curse curse = 4;
+    Client client = 5;
+    User utilizator = 6;
+  }
+
+}

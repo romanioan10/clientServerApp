@@ -1,0 +1,6 @@
+package rpcprotocol;
+
+
+public enum ResponseType {
+    OK, ERROR, REZERVARE_NOUA, CURSE_UPDATE, SEND_ALL_REZERVARI, SEND_ALL_CURSE, SEND_CLIENT, SEND_SPECIFIC_CURSE;
+}

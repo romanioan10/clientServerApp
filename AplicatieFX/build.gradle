@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+    id 'application'
+}
+
+group = 'ro.mpp2024'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = "21"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+application
+        {
+            mainClass = 'StartRpcClient'
+        }
+
+dependencies {
+    implementation project(path: ':AplicatiePersistence')
+    implementation project(path: ':AplicatieServices')
+    implementation project(path: ':AplicatieModel')
+    implementation project(path: ':AplicatieNetworking')
+
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation('org.controlsfx:controlsfx:11.1.1')
+    implementation('com.dlsc.formsfx:formsfx-core:11.5.0') {
+        exclude(group: 'org.openjfx')
+    }
+    implementation('org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0')
+}
+
+test {
+    useJUnitPlatform()
+}

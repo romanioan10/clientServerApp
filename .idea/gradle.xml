@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="corretto-19" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/AplicatieFX" />
+            <option value="$PROJECT_DIR$/AplicatieModel" />
+            <option value="$PROJECT_DIR$/AplicatieNetworking" />
+            <option value="$PROJECT_DIR$/AplicatiePersistence" />
+            <option value="$PROJECT_DIR$/AplicatieServer" />
+            <option value="$PROJECT_DIR$/AplicatieServices" />
+            <option value="$PROJECT_DIR$/RestServices" />
+            <option value="$PROJECT_DIR$/react-client" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
